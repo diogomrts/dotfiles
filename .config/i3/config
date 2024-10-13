@@ -4,6 +4,7 @@
 
 set $mod Mod4
 
+exec --no-startup-id picom
 
 # MONITORS
 exec_always --no-startup-id xrandr --output DP-2 --primary --mode 3840x1600 --rate 144 --below HDMI-0
