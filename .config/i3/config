@@ -17,7 +17,7 @@ exec_always --no-startup-id feh --bg-fill ~/Downloads/Wallpapers/21_9/granblue.j
 font pango:Meslo LGM Nerd Font 14
 
 # BAR
-exec-always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 #bar {
 #  status_command i3status

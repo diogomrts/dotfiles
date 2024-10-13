@@ -59,6 +59,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [shell]
 program = "/bin/bash"
+#program = "/bin/zsh"
 
 [window]
 decorations = "full"
