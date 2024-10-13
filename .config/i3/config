@@ -11,8 +11,9 @@ exec_always --no-startup-id xrandr --output HDMI-0 --pos 900x0
 
 exec_always --no-startup-id feh --bg-center ~/Downloads/Wallpapers/21_9/granblue.jpg
 
-font pango:monospace 12
+#font pango:monospace 12
 #font pango:DejaVu Sans Mono 12
+font pango:Meslo LGM Nerd Font 14
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
