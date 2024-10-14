@@ -68,6 +68,7 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
+bindkey "^[[3~" delete-char
 
 zle_highlight+=(paste:none)
 
@@ -99,4 +100,4 @@ alias c='clear'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-
+eval "$(direnv hook zsh)"
