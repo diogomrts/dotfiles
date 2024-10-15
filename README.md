@@ -9,7 +9,7 @@ stow .
 
 TODO:
 - improved polybar https://github.com/catppuccin/polybar?tab=readme-ov-file
-- lightdm login theme
+- show only monitor workspaces in polybar
 - power menu
 - screenshot app
 - volume control applet
