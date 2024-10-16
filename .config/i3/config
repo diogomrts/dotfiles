@@ -1,3 +1,4 @@
+
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -37,10 +38,16 @@ exec --no-startup-id xrandr --output DP-2 --primary --mode 3840x1600 --rate 144 
 
 #font pango:monospace 12
 #font pango:DejaVu Sans Mono 12
-font pango:Meslo LGM Nerd Font 14
+font pango:JetBrainsMono Nerd Font 12
 
 # BAR
-exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+bar {
+    status_command i3status -c ~/.config/i3status/i3status.conf
+    tray_output primary
+#    tray_padding 10px
+}
+
+#exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Hide title bar
 for_window [class="^.*"] border pixel 1
