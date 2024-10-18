@@ -8,8 +8,7 @@ stow .
 
 
 TODO:
-- improved polybar https://github.com/catppuccin/polybar?tab=readme-ov-file
-- show only monitor workspaces in polybar
+- i3bar gaps?
 - power menu
 - volume control applet
 - clipboard manager

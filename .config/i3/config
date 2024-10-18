@@ -31,23 +31,12 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 
+font pango:JetBrainsMono Nerd Font 12
+
 # MONITORS
 exec --no-startup-id feh --bg-fill ~/Downloads/Wallpapers/21_9/mt-fuji.png
 
 exec --no-startup-id xrandr --output DP-2 --primary --mode 3840x1600 --rate 144 --pos 0x1080 --output HDMI-0 --auto --pos 900x0
-
-#font pango:monospace 12
-#font pango:DejaVu Sans Mono 12
-font pango:JetBrainsMono Nerd Font 12
-
-# BAR
-bar {
-    status_command i3status -c ~/.config/i3status/i3status.conf
-    tray_output primary
-#    tray_padding 10px
-}
-
-#exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Hide title bar
 for_window [class="^.*"] border pixel 1
@@ -202,3 +191,26 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
+
+# BAR
+bar {
+    status_command i3status -c ~/.config/i3status/i3status.conf
+    tray_output primary
+    tray_padding 3px
+    workspace_min_width 30
+   
+    colors {
+      background         $base
+      statusline         $text
+      focused_statusline $text
+      focused_separator  $base
+
+      # target           border bg        text
+      focused_workspace  $base  $mauve    $crust
+      active_workspace   $base  $surface2 $text
+      inactive_workspace $base  $base     $text
+      urgent_workspace   $base  $red      $crust
+    }
+}
+
+#exec_always --no-startup-id sh ~/.config/polybar/launch.sh
