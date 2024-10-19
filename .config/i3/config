@@ -56,10 +56,12 @@ workspace 9 output HDMI-0
 workspace 10 output HDMI-0
 
 # APPS
+assign [class="steam"] $ws8
 assign [class="discord"] $ws9
 assign [class="firefox"] $ws10
-exec_always discord
-exec_always firefox
+exec steam
+exec discord
+exec firefox
 
 
 floating_modifier $mod
