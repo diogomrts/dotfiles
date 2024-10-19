@@ -12,4 +12,3 @@ TODO:
 - power menu
 - volume control applet
 - clipboard manager
-- consolas and nerd fonts
