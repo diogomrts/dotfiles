@@ -213,8 +213,9 @@ bar {
       urgent_workspace   $base  $red      $crust
     }
 
-    status_command i3status -c ~/.config/i3status/i3status.conf
-    status_command ~/.config/i3status/myi3status.conf
+    #status_command i3status -c ~/.config/i3status/i3status.conf
+    status_command py3status -c ~/.config/i3status/i3status.conf
+    #status_command ~/.config/i3status/myi3status.conf
     tray_output primary
     tray_padding 3px
     workspace_min_width 30
