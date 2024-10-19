@@ -63,6 +63,7 @@ exec steam
 exec discord
 exec firefox
 
+exec_always --no-startup-id clipcatd
 
 floating_modifier $mod
 tiling_drag modifier titlebar
@@ -160,7 +161,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym Print exec flameshot gui
-
+bindsym Shift+Control+v exec clipcat-menu insert; exec xclip -selection clipboard -o
 
 # THEME
 set $rosewater #f4dbd6
