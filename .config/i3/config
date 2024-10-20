@@ -5,7 +5,7 @@
 
 set $mod Mod4
 
-exec --no-startup-id picom
+#exec_always --no-startup-id picom
 
 
 # Start XDG autostart .desktop files using dex. See also
@@ -63,7 +63,8 @@ exec steam
 exec discord
 exec firefox
 
-exec_always --no-startup-id clipcatd
+#exec_always --no-startup-id clipcatd
+exec_always --no-startup-id copyq
 
 floating_modifier $mod
 tiling_drag modifier titlebar
@@ -161,7 +162,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym Print exec flameshot gui
-bindsym Shift+Control+v exec clipcat-menu insert; exec xclip -selection clipboard -o
+#bindsym Shift+Control+v exec clipcat-menu insert; exec xclip -selection clipboard -o -target
+#bindsym Shift+Control+v exec xclip -selection clipboard -o -target
 
 # THEME
 set $rosewater #f4dbd6
