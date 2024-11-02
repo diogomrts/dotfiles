@@ -65,6 +65,7 @@ exec firefox
 #exec_always --no-startup-id clipcatd
 exec_always --no-startup-id copyq
 exec_always --no-startup-id nm-applet
+exec_always --no-startup-id dunst
 
 floating_modifier $mod
 tiling_drag modifier titlebar
