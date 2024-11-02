@@ -40,7 +40,7 @@ font pango:JetBrainsMono Nerd Font 12
 # MONITORS
 exec --no-startup-id feh --bg-fill ~/Downloads/Wallpapers/21_9/mt-fuji.png
 
-exec --no-startup-id xrandr --output DP-2 --primary --mode 3840x1600 --rate 144 --pos 0x1080 --output HDMI-0 --auto --pos 900x0
+exec_always --no-startup-id xrandr --output DP-2 --primary --mode 3840x1600 --rate 144 --pos 0x1080 --output HDMI-0 --mode 1920x1080 --rate 60 --pos 900x0
 
 # Hide title bar
 for_window [class="^.*"] border pixel 1
