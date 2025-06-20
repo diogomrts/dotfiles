@@ -27,3 +27,47 @@
 #      ansible.builtin.user:
 #        name: "{{ remote_regular_user }}"
 #        shell: /usr/bin/zsh
+
+- name: Install yay (AUR helper)
+  hosts: localhost
+  become: true
+  vars:
+    yay_bin: /usr/bin/yay
+    yay_dir: /tmp/yay
+
+  tasks:
+    - name: Check if yay is already installed
+      stat:
+        path: "{{ yay_bin }}"
+      register: yay_installed
+
+    - name: Check if yay repo already exists
+      stat:
+        path: "{{ yay_dir }}"
+      register: yay_repo
+      when:
+        - not yay_installed.stat.exists
+
+    - name: Clone yay AUR repo
+      git:
+        repo: https://aur.archlinux.org/yay.git
+        dest: "{{ yay_dir }}"
+        update: no
+      become: false
+      when:
+        - not yay_installed.stat.exists
+
+    - name: Build and install yay
+      command: makepkg -si --noconfirm
+      args:
+        chdir: "{{ yay_dir }}"
+      become: false
+      when: not yay_installed.stat.exists
+
+    - name: Clean up yay build directory
+      file:
+        path: "{{ yay_dir }}"
+        state: absent
+      become: false
+      when:
+        - not yay_installed.stat.exists
