@@ -41,7 +41,7 @@
         HOME: "/home/{{ remote_regular_user }}"
       when: remote_regular_user != "root"
 
-#    - name: Change shell to zsh
-#      ansible.builtin.user:
-#        name: "{{ remote_regular_user }}"
-#        shell: /usr/bin/zsh
+    - name: Change shell to zsh
+      ansible.builtin.user:
+        name: "{{ remote_regular_user }}"
+        shell: /usr/bin/zsh
