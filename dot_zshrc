@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 #ZSH_THEME="af-magic"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
 
 RPROMPT="%*"
 
@@ -10,7 +10,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+
+##############################
 # User configuration
+##############################
+
+setopt INC_APPEND_HISTORY
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -21,3 +26,22 @@ fi
 
 alias vim=nvim
 
+
+##############################
+# Auto reload zsh hook
+##############################
+autoload -Uz add-zsh-hook
+
+last_reload=0
+config_file=~/.zshrc
+
+reload_if_changed() {
+  local mtime=$(stat -c %Y $config_file)
+  if [[ $mtime -ne $last_reload ]]; then
+    source $config_file
+    last_reload=$mtime
+    echo "Reloaded Zsh config due to change."
+  fi
+}
+
+add-zsh-hook precmd reload_if_changed
