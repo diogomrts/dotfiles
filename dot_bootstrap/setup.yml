@@ -38,20 +38,21 @@
 
     - block:
         - name: Clone yay AUR repository
+          become: false
           git:
             repo: https://aur.archlinux.org/yay.git
-            dest: ~/yay
+            dest: /tmp/yay
             update: no
 
         - name: Build and install yay from source
           command: makepkg -si --noconfirm
           become: false
           args:
-            chdir: ~/yay
+            chdir: /tmp/yay
 
         - name: Remove yay build directory
           file:
-            path: ~/yay
+            path: /tmp/yay
             state: absent
       when: yay_check.rc != 0
 
