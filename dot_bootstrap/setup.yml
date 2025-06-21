@@ -13,61 +13,35 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
+    - name: Install requirements.yml
+      command: ansible-galaxy collection install -r requirements.yml
+      register: install_requirements
+      changed_when: '"Nothing to do. All requested collections are already installed." not in install_requirements.stdout'
+
     - name: Install packages
       ansible.builtin.pacman:
-        name:
-          - git
-          - base-devel
-          - zsh
-#          - fzf
-#          - tmux
         state: present
+        name:
+          - base-devel
+          - code
+          - git
+          - neovim
+          - zsh
+
+    - name: Install packages from AUR as regular user
+      kewlfft.aur.aur:
+        use: yay
+        name:
+          - oh-my-zsh-git
+          - zen-browser-bin
+      become: false
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
+      environment:
+        HOME: "/home/{{ remote_regular_user }}"
+      when: remote_regular_user != "root"
 
 #    - name: Change shell to zsh
 #      ansible.builtin.user:
 #        name: "{{ remote_regular_user }}"
 #        shell: /usr/bin/zsh
-
-- name: Install yay (AUR helper)
-  hosts: localhost
-  become: true
-  vars:
-    yay_bin: /usr/bin/yay
-    yay_dir: /tmp/yay
-
-  tasks:
-    - name: Check if yay is already installed
-      stat:
-        path: "{{ yay_bin }}"
-      register: yay_installed
-
-    - name: Check if yay repo already exists
-      stat:
-        path: "{{ yay_dir }}"
-      register: yay_repo
-      when:
-        - not yay_installed.stat.exists
-
-    - name: Clone yay AUR repo
-      git:
-        repo: https://aur.archlinux.org/yay.git
-        dest: "{{ yay_dir }}"
-        update: no
-      become: false
-      when:
-        - not yay_installed.stat.exists
-
-    - name: Build and install yay
-      command: makepkg -si --noconfirm
-      args:
-        chdir: "{{ yay_dir }}"
-      become: false
-      when: not yay_installed.stat.exists
-
-    - name: Clean up yay build directory
-      file:
-        path: "{{ yay_dir }}"
-        state: absent
-      become: false
-      when:
-        - not yay_installed.stat.exists
