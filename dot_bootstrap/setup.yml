@@ -57,7 +57,6 @@
       kewlfft.aur.aur:
         use: yay
         name:
-          - oh-my-zsh-git
           - zen-browser-bin
       become: false
       vars:
