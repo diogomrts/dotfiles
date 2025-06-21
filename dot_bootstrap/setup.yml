@@ -18,6 +18,7 @@
         state: present
         name:
           - base-devel
+          - chezmoi
           - code
           - git
           - lazygit
@@ -44,6 +45,7 @@
 
         - name: Build and install yay from source
           command: makepkg -si --noconfirm
+          become: false
           args:
             chdir: ~/yay
 
