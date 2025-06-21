@@ -13,11 +13,6 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
-    - name: Install requirements.yml
-      command: ansible-galaxy collection install -r requirements.yml
-      register: install_requirements
-      changed_when: '"Nothing to do. All requested collections are already installed." not in install_requirements.stdout'
-
     - name: Install packages
       ansible.builtin.pacman:
         state: present
@@ -25,8 +20,38 @@
           - base-devel
           - code
           - git
+          - lazygit
           - neovim
           - zsh
+
+    - name: Check if yay is installed
+      shell: command -v yay
+      register: yay_check
+      failed_when: false   # Don't fail if yay not found
+      changed_when: false
+
+    - name: Fail if yay check command failed unexpectedly
+      fail:
+        msg: "Failed to check if yay exists."
+      when: yay_check.rc not in [0, 1]
+
+    - block:
+        - name: Clone yay AUR repository
+          git:
+            repo: https://aur.archlinux.org/yay.git
+            dest: ~/yay
+            update: no
+
+        - name: Build and install yay from source
+          command: makepkg -si --noconfirm
+          args:
+            chdir: ~/yay
+
+        - name: Remove yay build directory
+          file:
+            path: ~/yay
+            state: absent
+      when: yay_check.rc != 0
 
     - name: Install packages from AUR as regular user
       kewlfft.aur.aur:

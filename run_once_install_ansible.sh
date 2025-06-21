@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 install_on_fedora() {
     sudo dnf install -y ansible
 }
@@ -10,7 +12,7 @@ install_on_ubuntu() {
 }
 
 install_on_arch() {
-    sudo pacman -Sy --noconfirm ansible
+    sudo pacman -Sy --noconfirm --needed ansible
 }
 
 install_on_mac() {
@@ -40,6 +42,7 @@ case "${OS}" in
         ;;
 esac
 
-ansible-playbook ~/.bootstrap/setup.yml --ask-become-pass
+# install requirements
+ansible-galaxy collection install -r requirements.yml
 
-echo "Ansible installation complete."
+ansible-playbook ~/.bootstrap/setup.yml --ask-become-pass
