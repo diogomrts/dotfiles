@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# ./config/kitty/kitty.confe hash: {{ include "dot_config/kitty/kitty.conf" | sha256sum }}
+
+if command -v kitty &> /dev/null; then
+    kill -SIGUSR1 $KITTY_PID
+fi
+
