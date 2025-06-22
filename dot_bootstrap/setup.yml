@@ -7,10 +7,17 @@
   roles:
     - role: jahrik.yay
       install: true
+      vars:
+        aur_packages:
+          - bruno
+          - ttf-ms-win10-auto
+          - ttf-ms-win11-auto
+          - zen-browser-bin
+
   tasks:
-    - name: Get my user
-      ansible.builtin.set_fact:
-        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+#    - name: Get my user
+#      ansible.builtin.set_fact:
+#        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
     - name: Install packages
       ansible.builtin.pacman:
@@ -25,6 +32,11 @@
           - neovim
           - ttf-jetbrains-mono-nerd
           - zsh
+          - zsh-autocomplete
+          - zsh-autosuggestions
+          - zsh-completions
+          - zsh-history-substring-search
+          - zsh-syntax-highlighting
 
 #    - name: Install packages from AUR
 #      become: true
@@ -33,7 +45,7 @@
 #        HOME: "/home/{{ remote_regular_user }}"
 #      when: remote_regular_user != "root"
 
-    - name: Change shell to zsh
-      ansible.builtin.user:
-        name: "{{ remote_regular_user }}"
-        shell: /usr/bin/zsh
+#    - name: Change shell to zsh
+#      ansible.builtin.user:
+#        name: "{{ remote_regular_user }}"
+#        shell: /usr/bin/zsh
