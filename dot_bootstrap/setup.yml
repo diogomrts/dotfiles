@@ -4,10 +4,9 @@
   become: true
   connection: local
   gather_facts: true
-  vars:
-    flyctl_version: "0.1.130"
-    pulumi_version: "v3.94.2"
-
+  roles:
+    - role: jahrik.yay
+      install: true
   tasks:
     - name: Get my user
       ansible.builtin.set_fact:
@@ -20,53 +19,19 @@
           - base-devel
           - chezmoi
           - code
+          - fastfetch
           - git
           - lazygit
           - neovim
+          - ttf-jetbrains-mono-nerd
           - zsh
 
-    - name: Check if yay is installed
-      shell: command -v yay
-      register: yay_check
-      failed_when: false   # Don't fail if yay not found
-      changed_when: false
-
-    - name: Fail if yay check command failed unexpectedly
-      fail:
-        msg: "Failed to check if yay exists."
-      when: yay_check.rc not in [0, 1]
-
-    - block:
-        - name: Clone yay AUR repository
-          become: false
-          git:
-            repo: https://aur.archlinux.org/yay.git
-            dest: /tmp/yay
-            update: no
-
-        - name: Build and install yay from source
-          command: makepkg -si --noconfirm
-          become: false
-          args:
-            chdir: /tmp/yay
-
-        - name: Remove yay build directory
-          file:
-            path: /tmp/yay
-            state: absent
-      when: yay_check.rc != 0
-
-    - name: Install packages from AUR as regular user
-      kewlfft.aur.aur:
-        use: yay
-        name:
-          - zen-browser-bin
-      become: false
-      vars:
-        ansible_python_interpreter: /usr/bin/python3
-      environment:
-        HOME: "/home/{{ remote_regular_user }}"
-      when: remote_regular_user != "root"
+#    - name: Install packages from AUR
+#      become: true
+#      become: false
+#      environment:
+#        HOME: "/home/{{ remote_regular_user }}"
+#      when: remote_regular_user != "root"
 
     - name: Change shell to zsh
       ansible.builtin.user:

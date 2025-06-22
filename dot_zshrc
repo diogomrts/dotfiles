@@ -40,7 +40,7 @@ reload_if_changed() {
   if [[ $mtime -ne $last_reload ]]; then
     source $config_file
     last_reload=$mtime
-    echo "Reloaded Zsh config due to change."
+    echo "Reloaded Zsh config."
   fi
 }
 
