@@ -9,9 +9,9 @@
       install: true
       vars:
         aur_packages:
-          - bruno
+#          - bruno
           - ttf-ms-win10-auto
-          - ttf-ms-win11-auto
+#          - ttf-ms-win11-auto
           - zen-browser-bin
 
   tasks:
