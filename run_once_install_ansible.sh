@@ -43,6 +43,6 @@ case "${OS}" in
 esac
 
 # install requirements
-ansible-galaxy collection install -r ~/.bootstrap/requirements.yml
+ansible-galaxy install -r ~/.bootstrap/requirements.yml
 
 ansible-playbook ~/.bootstrap/setup.yml --ask-become-pass
