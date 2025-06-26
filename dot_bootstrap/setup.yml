@@ -26,12 +26,18 @@
         name:
           - base-devel
           - chezmoi
+          - chromium
           - code
+          - discord
           - fastfetch
           - git
           - lazygit
           - neovim
+          - ntfs-3g
+          - otf-font-awesome
+          - steam
           - ttf-jetbrains-mono-nerd
+          - waybar
           - zsh
           - zsh-autocomplete
           - zsh-autosuggestions
