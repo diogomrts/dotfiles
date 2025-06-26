@@ -11,7 +11,7 @@
       vars:
         aur_packages:
 #          - bruno
-          - ttf-ms-win10-auto
+#          - ttf-ms-win10-auto
 #          - ttf-ms-win11-auto
           - zen-browser-bin
 
