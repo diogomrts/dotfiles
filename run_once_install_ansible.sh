@@ -24,7 +24,7 @@ case "${OS}" in
     Linux*)
         if [ -f /etc/arch-release ]; then
             install_on_arch
-        eliif [ -f /etc/fedora-release ]; then
+        elif [ -f /etc/fedora-release ]; then
             install_on_fedora
         elif [ -f /etc/lsb-release ]; then
             install_on_ubuntu
