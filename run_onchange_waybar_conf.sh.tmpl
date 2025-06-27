@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# .config/waybar/config.jsonc hash: {{ include "dot_config/waybar/config.jsonc" | sha256sum }}
+
+if command -v waybar &> /dev/null; then
+    pkill waybar ; hyprctl dispatch exec waybar
+fi
+
