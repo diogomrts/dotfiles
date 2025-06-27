@@ -39,6 +39,9 @@ fi
 
 alias vim=nvim
 
+if [[ -o interactive ]]; then
+  fastfetch
+fi
 
 ##############################
 # Auto reload zsh hook
