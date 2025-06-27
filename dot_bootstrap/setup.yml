@@ -25,6 +25,7 @@
         state: present
         name:
           - base-devel
+          - btop
           - chezmoi
           - chromium
           - code
