@@ -11,7 +11,7 @@
       "custom/spacer",
       "hyprland/workspaces",
       "custom/spacer",
-      // "hyprland/submap",
+      "hyprland/submap",
       "hyprland/window"
     ],
 
@@ -35,7 +35,7 @@
       "custom/spacer",
       "custom/weather",
       "clock",
-      "custom/spacer",
+      "custom/spacer"
     ],
 
     // Modules
@@ -44,7 +44,7 @@
       "format": " {percentage_used}%",
       "tooltip": "{}",
       "tooltip-format": "Free {free}",
-      "on-click": "qdirstat & aplay ~/.config/sounds/interact.wav",
+      "on-click": "qdirstat & aplay ~/.config/sounds/interact.mp3",
       "states": {
         "warning": 85,
         "critical": 95
@@ -73,7 +73,7 @@
       "exec": "~/.config/waybar/bat-pp.sh refresh",
       "exec-on-event": true,
       "format": "{text}%",
-      "on-click": "~/.config/waybar/bat-pp.sh toggle & aplay ~/.config/sounds/interact.wav",
+      "on-click": "~/.config/waybar/bat-pp.sh toggle & aplay ~/.config/sounds/interact.mp3",
       "tooltip": "true",
       "tooltip-format": "{alt}W"
     },
@@ -95,7 +95,7 @@
           "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
         }
       },
-      "on-click": "chromium --app=https://calendar.google.com & aplay ~/.config/sounds/interact.wav"
+      "on-click": "chromium --app=https://calendar.google.com & aplay ~/.config/sounds/interact.mp3"
     },
 
     "cpu": {
@@ -112,7 +112,7 @@
       "format-fi": "Vittu",
       "format-ru": "Блять",
       "min-length": 7,
-      "on-click": "hyprctl switchxkblayout current next & aplay ~/.config/sounds/interact.wav",
+      "on-click": "hyprctl switchxkblayout current next & aplay ~/.config/sounds/interact.mp3",
       "tooltip": false,
       "class": "language"
     },
@@ -144,7 +144,7 @@
       "tooltip": "{}",
       "tooltip-format-wifi": "{ifname}\n{essid}\n{signalStrength}% \n{frequency} GHz\n󰇚 {bandwidthDownBits}\n󰕒 {bandwidthUpBits}",
       "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
-      "on-click": "iwgtk& aplay ~/.config/sounds/interact.wav",
+      "on-click": "iwgtk& aplay ~/.config/sounds/interact.mp3",
       "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
       "states": {
         "normal": 25
@@ -211,7 +211,7 @@
         "default": ["", ""]
       },
       "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-      "on-click": "pwvucontrol & aplay ~/.config/sounds/interact.wav",
+      "on-click": "pwvucontrol & aplay ~/.config/sounds/interact.mp3",
       "tooltip": true,
       "scroll-step": 5
     },
@@ -224,7 +224,7 @@
       "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
       "max-volume": "100",
       "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-      "on-click": "pwvucontrol & aplay ~/.config/sounds/interact.wav",
+      "on-click": "pwvucontrol & aplay ~/.config/sounds/interact.mp3",
       "tooltip-format": "{source_desc}"
     },
 
