@@ -39,9 +39,6 @@ fi
 
 alias vim=nvim
 
-if [[ -o interactive ]]; then
-  fastfetch
-fi
 
 ##############################
 # Auto reload zsh hook
@@ -56,8 +53,12 @@ reload_if_changed() {
   if [[ $mtime -ne $last_reload ]]; then
     source $config_file
     last_reload=$mtime
-    echo "Reloaded Zsh config."
   fi
 }
 
 add-zsh-hook precmd reload_if_changed
+
+if [[ -o interactive ]]; then
+  clear
+  fastfetch
+fi
