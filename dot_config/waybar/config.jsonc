@@ -27,7 +27,7 @@
       "disk",
       "custom/spacer",
       "custom/spacer",
-      "pulseaudio#input",
+      // "pulseaudio#input",
       "pulseaudio#output",
       // "custom/spacer",
       // "custom/battery",
