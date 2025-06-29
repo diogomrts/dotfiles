@@ -29,6 +29,7 @@
           - chezmoi
           - chromium
           - code
+          - direnv
           - discord
           - fastfetch
           - git
