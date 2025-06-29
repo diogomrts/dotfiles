@@ -9,11 +9,8 @@
       install: true
       become: false
       vars:
-        aur_packages:
-#          - bruno
-#          - ttf-ms-win10-auto
-#          - ttf-ms-win11-auto
-          - zen-browser-bin
+#        aur_packages: # installed with a script to see progress
+#          - zen-browser-bin
 
   tasks:
     - name: Get my user

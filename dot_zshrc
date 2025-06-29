@@ -32,7 +32,7 @@ fi
 
 alias vim=nvim
 
-echo "eval \"\$(/home/diogom/.local/bin/mise activate zsh)\"" >> "/home/diogom/.zshrc"
+eval "$(/home/diogom/.local/bin/mise activate zsh)"
 
 
 ##############################
