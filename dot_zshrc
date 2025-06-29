@@ -12,14 +12,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-plugins=(
-#  git
-#  zsh-autocomplete
-#  zsh-autosuggestions
-#  zsh-completions
-#  zsh-history-substring-search
-#  zsh-syntax-highlighting
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,6 +31,8 @@ else
 fi
 
 alias vim=nvim
+
+echo "eval \"\$(/home/diogom/.local/bin/mise activate zsh)\"" >> "/home/diogom/.zshrc"
 
 
 ##############################
