@@ -7,7 +7,7 @@ ZSH_THEME="robbyrussell"
 RPROMPT="%*"
 
 #source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #source ~/.oh-my-zsh/plugins/zsh-completions
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -33,7 +33,7 @@ fi
 alias vim=nvim
 
 eval "$(/home/diogom/.local/bin/mise activate zsh)"
-
+eval "$(direnv hook bash)"
 
 ##############################
 # Auto reload zsh hook
