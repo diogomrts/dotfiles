@@ -7,4 +7,5 @@
 
 yay -S --needed --noconfirm \
 ttf-ms-win11-auto \
-zen-browser-bin
+zen-browser-bin \
+pwvucontrol

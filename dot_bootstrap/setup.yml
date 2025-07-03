@@ -17,8 +17,22 @@
       ansible.builtin.set_fact:
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
+    - name: Ensure multilib section is uncommented in /etc/pacman.conf
+      ansible.builtin.blockinfile:
+        path: /etc/pacman.conf
+        marker: "# {mark} ANSIBLE MANAGED MULTILIB SECTION"
+        block: |
+          [multilib]
+          Include = /etc/pacman.d/mirrorlist
+
     - name: Install packages
-      ansible.builtin.pacman:
+      community.general.pacman:
+        update_cache: yes
+        upgrade: yes
+        state: present
+
+    - name: Install packages
+      community.general.pacman:
         state: present
         name:
           - base-devel
