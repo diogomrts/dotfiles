@@ -8,4 +8,6 @@
 yay -S --needed --noconfirm \
 ttf-ms-win11-auto \
 zen-browser-bin \
-pwvucontrol
+pwvucontrol \
+adwaita-qt5-git \
+adwaita-qt6-git
