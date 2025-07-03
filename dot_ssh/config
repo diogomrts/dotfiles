@@ -1,0 +1,11 @@
+Host github.com
+  User diogomrts
+  Hostname github.com
+  PreferredAuthentications publickey
+  IdentityFile /home/diogom/.ssh/github
+
+Host gitlab.com
+  User diogomrts
+  Hostname gitlab.com
+  PreferredAuthentications publickey
+  IdentityFile /home/diogom/.ssh/gitlab
