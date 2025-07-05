@@ -45,6 +45,7 @@
           - fastfetch
           - git
           - gnome-themes-extra
+          - hyprlock
           - hyprpaper
           - hyprshot
           - lazygit
