@@ -35,6 +35,8 @@
       "custom/spacer",
       "custom/weather",
       "clock",
+      "custom/spacer",
+      "custom/wlogout", 
       "custom/spacer"
     ],
 
@@ -239,6 +241,11 @@
     "tray": {
       "icon-size": 17,
       "spacing": 8
+    },
+
+    "custom/wlogout": {
+      "on-click": "wlogout",
+      "format": "⏻",
     },
 
     "custom/spacer": {

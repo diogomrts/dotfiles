@@ -10,4 +10,5 @@ ttf-ms-win11-auto \
 zen-browser-bin \
 pwvucontrol \
 adwaita-qt5-git \
-adwaita-qt6-git
+adwaita-qt6-git \
+wlogout

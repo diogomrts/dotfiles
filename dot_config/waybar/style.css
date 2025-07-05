@@ -40,6 +40,7 @@
 }
 
 /* Main bar modules */
+#waybar.main #custom-wlogout,
 #waybar.main #custom-nvidia,
 #waybar.main #custom-weather,
 #waybar.main #custom-weather,
