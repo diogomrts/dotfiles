@@ -1,5 +1,11 @@
 {
     "workbench.colorTheme": "Catppuccin Macchiato",
     "explorer.confirmDelete": false,
-    "editor.fontFamily": "JetBrainsMono Nerd Font Mono"
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "window.zoomLevel": 2,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "none",
+    "git.openRepositoryInParentFolders": "always",
+    "database-client.autoSync": true,
+    "security.workspace.trust.untrustedFiles": "open"
 }
