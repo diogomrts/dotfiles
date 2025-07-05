@@ -39,6 +39,7 @@
           - btop
           - chezmoi
           - chromium
+          - cliphist
           - code
           - direnv
           - discord
@@ -61,6 +62,7 @@
           - steam
           - ttf-jetbrains-mono-nerd
           - waybar
+          - ydotool
           - zsh
           - zsh-autocomplete
           - zsh-autosuggestions
