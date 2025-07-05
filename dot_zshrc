@@ -34,6 +34,7 @@ alias vim=nvim
 
 eval "$(/home/diogom/.local/bin/mise activate zsh)"
 eval "$(direnv hook bash)"
+eval "$(~/usr/bin/mise activate bash)"
 
 ##############################
 # Auto reload zsh hook
