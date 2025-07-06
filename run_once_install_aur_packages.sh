@@ -11,4 +11,5 @@ zen-browser-bin \
 pwvucontrol \
 adwaita-qt5-git \
 adwaita-qt6-git \
-wlogout
+wlogout \
+code-marketplace
