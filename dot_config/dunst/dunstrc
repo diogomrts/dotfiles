@@ -1,7 +1,7 @@
 [global]
     monitor = 0
 #    follow = none
-    width = 300
+    width = 800
     origin = top-center
     offset = (0, 10)
     scale = 0
@@ -11,7 +11,7 @@
     progress_bar_height = 10
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
-    progress_bar_max_width = 300
+    progress_bar_max_width = 800
     progress_bar_corner_radius = 2
     progress_bar_corners = all
 
