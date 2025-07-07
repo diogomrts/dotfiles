@@ -7,5 +7,6 @@
     "workbench.startupEditor": "none",
     "git.openRepositoryInParentFolders": "always",
     "database-client.autoSync": true,
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.autoReveal": false
 }

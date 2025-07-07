@@ -32,7 +32,7 @@ fi
 
 alias vim=nvim
 
-eval "$(/usr/bin/mise activate zsh)"
+eval "$(/usr/bin/mise activate zsh --shims)"
 eval "$(direnv hook zsh)"
 
 ##############################
