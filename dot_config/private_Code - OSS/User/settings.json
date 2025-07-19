@@ -8,5 +8,10 @@
     "git.openRepositoryInParentFolders": "always",
     "database-client.autoSync": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "explorer.autoReveal": false
+    "explorer.autoReveal": false,
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/home/diogom/.local/share/mise/shims/node"
+    },
+    "redhat.telemetry.enabled": false,
+    "files.autoSave": "afterDelay"
 }
