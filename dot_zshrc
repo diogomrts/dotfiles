@@ -30,6 +30,9 @@ else
   export EDITOR='nvim'
 fi
 
+# bolt launcher default profile (avoid opening on a separate browser)
+export XRE_PROFILE_PATH="$(find ~/.zen -maxdepth 1 -type d -name '*Default (release)*' | head -n 1)"
+
 alias vim=nvim
 
 eval "$(/usr/bin/mise activate zsh --shims)"
