@@ -37,6 +37,7 @@
         name:
           - base-devel
           - btop
+          - brightnessctl
           - chezmoi
           - chromium
           - cliphist
@@ -46,6 +47,7 @@
           - fastfetch
           - git
           - gnome-themes-extra
+          - grim
           - hyprlock
           - hyprpaper
           - hyprshot
@@ -56,12 +58,15 @@
           - network-manager-applet
           - ntfs-3g
           - otf-font-awesome
+          - playerctl
           - power-profiles-daemon
           - python-gobject
           - qt6ct
+          - slurp
           - steam
           - ttf-jetbrains-mono-nerd
           - waybar
+          - wl-clipboard
           - ydotool
           - zsh
           - zsh-autocomplete
